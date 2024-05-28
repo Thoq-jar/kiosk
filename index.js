@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 
 const httpsOptions = {
-  key: fs.readFileSync('key.pem', { passphrase: '1111' }),
+  key: fs.readFileSync('key.pem'),
   cert: fs.readFileSync('cert.pem')
 };
 
