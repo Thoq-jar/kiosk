@@ -30,13 +30,15 @@ cd kiosk
 
 echo "[Quik]: Adding to path..."
 
-cp run quick
+cp run quik
 
-sudo cp quick /usr/local/bin
+sudo cp quik /usr/local/bin
 
 echo "[Quik]: Installing dependencies..."
 
 echo "[Quik]: Installing..."
+
+npm install express
 
 npm install
 
