@@ -1,10 +1,9 @@
 const fs = require('fs');
 const https = require('https');
 const express = require('express');
-const path = require('path');
-
 const app = express();
 
+// Create your own certificate for https otherwise weather and location won't work!
 const httpsOptions = {
   key: fs.readFileSync('key.pem'),
   cert: fs.readFileSync('cert.pem')
