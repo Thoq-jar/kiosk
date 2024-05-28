@@ -1,5 +1,51 @@
 #!/bin/bash
 
-npm install express
+echo "========================================================="
+echo "Welcome to Quik Kiosk!"
+echo "This is open source: https://github.com/Thoq-jar/kiosk.git"
+echo "NodeJS + NPM Required!"
+echo "=========================================================="
+
+cd ~
+
+echo "[Quik]: This will delete the dir: '.quick' and reinitalize it, exit the script in the next 5 secs to stop this action!"
+
+sleep 5
+
+rm -rf .quik
+
+mkdir .quik
+
+cd .quik
+
+echo "[Quik]: Downloading latest version..."
+
+git clone https://github.com/Thoq-jar/kiosk.git
+
+echo "[Quik]: Loading files..."
+
+cd kiosk
+
+echo "[Quik]: Adding to path..."
+
+cp run quick
+
+cp quick /usr/local/bin
+
+echo "[Quik]: Installing dependencies..."
+
+echo "[Quik]: Installing..."
+
+npm install
+
+echo "[Quik]: Starting..."
 
 npm start
+
+cd ~
+
+echo "Next time to run, just type 'quik' in your terminal!"
+
+echo "[Quik]: Exiting..."
+
+exit
