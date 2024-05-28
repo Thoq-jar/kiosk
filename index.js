@@ -5,8 +5,8 @@ const app = express();
 
 // Create your own certificate for https otherwise weather and location won't work!
 const httpsOptions = {
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem')
+  key: fs.readFileSync('server.key', { passphrase: '' }),
+  cert: fs.readFileSync('server.crt')
 };
 
 const httpsServer = https.createServer(httpsOptions, app);
