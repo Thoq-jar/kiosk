@@ -32,6 +32,8 @@ echo "[Quik]: Adding to path..."
 
 cp run quik
 
+chmod +x quik
+
 sudo cp quik /usr/local/bin
 
 echo "[Quik]: Installing dependencies..."
