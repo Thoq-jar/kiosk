@@ -25,11 +25,11 @@ body {
 
 .time-display,
 .weather-display {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 #currentTime {
-    font-size: 200px;
+    font-size: 250px;
     margin-bottom: 10px;
 }
 
