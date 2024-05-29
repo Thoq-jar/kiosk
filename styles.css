@@ -36,7 +36,8 @@ body {
 
 #cityName,
 #weatherDescription,
-#temperature {
+#temperature,
+#humidity {
     font-size: 75px;
     margin-bottom: 20px;
 }
