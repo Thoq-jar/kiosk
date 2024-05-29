@@ -13,23 +13,27 @@ function success(position) {
     const apiKey = '36496bad1955bf3365448965a42b9eac';
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-        document.getElementById('cityName').innerText = data.name;
-        document.getElementById('weatherDescription').innerText = data.weather[0].main;
-        const tempInCelsius = data.main.temp;
-        const tempInFahrenheit = (tempInCelsius * 9 / 5) + 32;
-        const roundedTempInFahrenheit = Math.round(tempInFahrenheit);
-        document.getElementById('temperature').innerText = roundedTempInFahrenheit + '°F';
-        document.getElementById('weatherIcon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    })
-  .catch(error => {
-        console.error("Error:", error);
-        document.getElementById('cityName').innerText = 'Unable to retrieve location';
-        document.getElementById('weatherDescription').innerText = '';
-        document.getElementById('temperature').innerText = '';
-    });
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+            const humidity = data.main.humidity;
+            document.getElementById('humidity').innerText = humidity + '%';
+
+            document.getElementById('cityName').innerText = data.name;
+            document.getElementById('weatherDescription').innerText = data.weather[0].main;
+            const tempInCelsius = data.main.temp;
+            const tempInFahrenheit = (tempInCelsius * 9 / 5) + 32;
+            const roundedTempInFahrenheit = Math.round(tempInFahrenheit);
+            document.getElementById('temperature').innerText = roundedTempInFahrenheit + '°F';
+            document.getElementById('weatherIcon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        })
+      .catch(error => {
+            console.error("Error:", error);
+            document.getElementById('cityName').innerText = 'Unable to retrieve location';
+            document.getElementById('weatherDescription').innerText = '';
+            document.getElementById('temperature').innerText = '';
+            document.getElementById('humidity').innerText = ''; 
+        });
 }
 
 function error(err) {
@@ -94,4 +98,4 @@ setInterval(function() {
         document.getElementById('weatherDescription').innerText = '';
         document.getElementById('temperature').innerText = '';
     }
-}, 60000); 
+}, 60000);
