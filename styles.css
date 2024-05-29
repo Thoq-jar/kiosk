@@ -25,6 +25,7 @@ body {
 
 .time-display,
 .weather-display {
+    margin-top: 100px;
     margin-bottom: 40px;
 }
 
