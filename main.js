@@ -22,7 +22,7 @@ fetch(url)
         const tempInFahrenheit = (tempInCelsius * 9 / 5) + 32;
         const roundedTempInFahrenheit = Math.round(tempInFahrenheit);
         document.getElementById('temperature').innerText = roundedTempInFahrenheit + '°F';
-        document.getElementById('weatherIcon').src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+        document.getElementById('weatherIcon').src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     })
   .catch(error => {
         console.error("Error:", error);
