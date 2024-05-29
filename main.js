@@ -13,7 +13,7 @@ function success(position) {
     const apiKey = '36496bad1955bf3365448965a42b9eac';
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
-    fetch(url)
+fetch(url)
   .then(response => response.json())
   .then(data => {
         document.getElementById('cityName').innerText = data.name;
@@ -50,10 +50,10 @@ if (navigator.geolocation) {
     document.getElementById('location').innerText = '';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+setInterval(function() {
     const currentTimeElement = document.getElementById('currentTime');
     currentTimeElement.innerText = getCurrentTime();
-});
+}, 1000);
 
 document.addEventListener('DOMContentLoaded', function() {
     const notification = document.createElement('div');
