@@ -42,8 +42,8 @@ body {
 }
 
 #weatherIcon {
-    width: 100;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 
 .notification {
